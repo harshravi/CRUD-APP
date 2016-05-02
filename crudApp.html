@@ -16,14 +16,14 @@
 		<div class="list_data">
 			<h3>List Data</h3>
 			<div class="table">
-				<table cellpadding="5" cellspacing="5" bordercolor="black" border="1">
+				<table cellpadding="5" cellspacing="5" bordercolor="white" border="1">
 					<tr>
 						<th>Name</th>
 						<th>Balance</th>
 						<th>Action</th>
 					</tr>
-					<tr ng-repeat="user in users">
-						<td>{{user.name}}</td>
+					<tr ng-repeat="user in users | orderBy: 'balance'">
+						<td>{{user.name }}</td>
 						<td>{{user.balance | currency}}</td>
 						<td><button ng-click="remove(user)" class="">Delete</button> / <button ng-click="edit(user)">Edit</button></td>
 					</tr>

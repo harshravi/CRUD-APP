@@ -1,22 +1,26 @@
 
 td, th {
     padding: 5px;
+    font-weight: 900;
 }
 th{
 	background: rgba(0, 51, 51, 0.64);
 	color:#FFFFFF
 }
-tr:nth-child(even){background-color: #f2f2f2}
+button {
+    font-weight: normal;
+}
 div#crudapp {
 	width: 300px;
     margin: 5% auto;
     border: 2px dashed #F3E2E2;
     padding: 0 15px;
+    background: url(media/bg.png)
 }
 #crudapp h1 {
     text-align: center;
 	font-weight:900;
-	color: rgb(112, 104, 230);
+	color: #FFFFFF;
 }
 #crudapp h3 {
     text-align: center;
@@ -34,4 +38,7 @@ form#update {
 }
 .table{
 	overflow-x:scroll;
+}
+.action {
+    margin-left: 47px;
 }
