@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<title>CRUD APP</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	
+	
+	
+	<div id="crudapp" ng-app="crudApp">
+		
+		<h1>CRUD APP</h1>
+		<div ng-controller="crudController">
+		<div class="list_data">
+			<h3>List Data</h3>
+			<div class="table">
+				<table cellpadding="5" cellspacing="5" bordercolor="black" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Balance</th>
+						<th>Action</th>
+					</tr>
+					<tr ng-repeat="user in users">
+						<td>{{user.name}}</td>
+						<td>{{user.balance | currency}}</td>
+						<td><button ng-click="remove(user)" class="">Delete</button> / <button ng-click="edit(user)">Edit</button></td>
+					</tr>
+		<!--             <tr>
+						<td colspan="2">Total</td>
+						<td>{{Totals().price | currency}}</td>
+						<td>{{Totals().tax | currency}}</td>
+						<td>&nbsp;</td>
+					</tr>
+		 -->	
+				</table>
+				<button ng-show="history.length > 0" ng-click="Undo()">Undo Delete</button>
+			</div>
+ 
+
+
+		<div class="add_data">
+			<h3>Add Data</h3>
+			<form class="navbar-form navbar-left" id="update" onsubmit="return validateForm()" name="Form">
+				<div class="field">
+					<label for="state">Name:</label>
+					<input type="text" id="name" class="form-control"  name="name" placeholder="Name" ng-model="current.name" value="{{current.name}}" />
+				</div>
+				<div class="field">
+					<label for="price">Price:&nbsp;</label>
+					<input type="text" id="name" class="form-control" name="balance" placeholder="Balance" ng-model="current.balance" value="{{current.balance}}" />
+				</div>
+
+				<div class="action">
+					<button ng-click="addNew(current)" class="btn"> Add New User</button>
+					<button ng-click="save(current)" class="btn">Save</button>
+				</div>
+			</form>
+		</div>
+
+ 
+<!-- 		<li	ng-repeat="user in users | orderBy: 'balance'">
+			{{user.name}}-{{user.balance | currency}}
+			<a href="#" ng-click="remove(user)">Delete</a> /
+			<a href="#" ng-click="edit(user)">Edit</a>
+		</li>	
+		<li>
+			<input type="text" id="name" ng-model="current.name" value="{{current.name}}" />
+			<input type="text" id="name" ng-model="current.balance" value="{{current.balance}}" />
+		</li>
+		<li>
+			<button ng-click="save(current)">Save</button>
+			<button ng-click="addNew(current)"> Add New User</button>
+		</li>
+		</div>	 -->	
+	</div>	
+<!-- 	<script>
+    function validateForm()
+    {
+    var a=document.forms["Form"]["name"].value;
+    var b=document.forms["Form"]["balance"].value;
+
+    if (a==null || a=="",b==null || b=="")
+      {
+      alert("Please Fill All Required Field");
+      return false;
+      }
+    }	
+	</script> -->
+	<script src="scripts/angular.min.js"></script>	
+	<script src="scripts/crudapp.js"></script>
+	
+</body>
+</html>
