@@ -1,0 +1,37 @@
+[
+	{
+		"StudentId": "1000"
+		"StudentName": "saurav"
+		"StudentMarks" "78%"
+	},
+	{
+		"StudentId": "1001"
+		"StudentName": "Rakesh"
+		"StudentMarks" "68%"
+	},
+	{
+		"StudentId": "1002"
+		"StudentName": "Rohit"
+		"StudentMarks" "98%"
+	},
+	{
+		"StudentId": "1003"
+		"StudentName": "Rahul"
+		"StudentMarks" "58%"
+	},
+	{
+		"StudentId": "1004"
+		"StudentName": "Ranjita"
+		"StudentMarks" "66%"
+	},
+	{
+		"StudentId": "1005"
+		"StudentName": "Roshan"
+		"StudentMarks" "72%"
+	},
+	{
+		"StudentId": "1006"
+		"StudentName": "Sonu"
+		"StudentMarks" "76%"
+	}	
+]
