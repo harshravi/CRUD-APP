@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<title>Jquery LogIn</title>
+	<meta http-equiv="COntent-Type" content="text/html; charset=utf-8" />
+	<link href="styles/styles.css" rel="stylesheet" type="text/css">
+	<script src="scripts/jquery-1.10.2.js"></script>	
+	<script src="scripts/script.js"></script>	
+</head>
+<body>
+	<div class="logo"></div>
+	<div class="loginbox">
+		<h1> Jquery LogIn</h1>
+		<table border=0 cellpadding="1" cellspacing="1">
+		<tr>
+			<td>UserName:</td>
+			<td><input type="text" name="username" id="username"></td>
+		</tr>
+		
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="password" id="password"></td>
+		</tr>			
+		<tr>
+			<td></td>
+			<td><span id="login_message"></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button type="button" id="login_btn">LogIn</button></td>
+		</tr>		
+		</table>
+	</div><!-- end of headcontainer-->
+	<div id="container"></div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var username = $("#username").val();
+			var password = $("#password").val();
+			
+			$("button#login_btn").click(function(){
+				$.post("server.php",{login:username,password:passsword},function(data){
+					if(data != "Wrong login"){
+						$("#loginbox").fadeOut();
+						$("#container").html(data);		
+					} else {
+						alert(data);
+					}
+				});
+			});
+		});
+	</script>
+	</body>
+</html>
